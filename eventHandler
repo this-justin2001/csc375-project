@@ -1,0 +1,55 @@
+package application;
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.control.MenuButton;
+import javafx.scene.control.MenuItem;
+import javafx.scene.layout.HBox;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.stage.Stage; //javaFX imports
+
+import java.awt.event.*;
+import java.awt.*;
+
+import java.io.File; //creates file to store info from option 3
+import java.io.PrintWriter; //sends information from menuItem3 to log.txt
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+
+public class userInterface extends Application{
+	@Override
+	public void start(Stage mainStage) throws Exception {
+		
+		mainStage.setTitle("Your Interface");
+		
+		MenuItem menuItem1 = new MenuItem("Date & Time");
+		
+		menuItem1.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent event) {
+				
+				
+	}
+});
+		MenuItem menuItem2 = new MenuItem("Send Data to File");
+		MenuItem menuItem3 = new MenuItem("Random Green Background");
+		MenuItem menuItem4 = new MenuItem("Close Application");
+		
+		MenuButton menuButton = new MenuButton("Options", null, menuItem1, menuItem2, menuItem3, menuItem4);
+		
+		HBox hbox = new HBox(menuButton);
+		
+		Scene scene = new Scene (hbox,200,160); //sets dimensions for hbox
+		mainStage.setScene(scene);
+		mainStage.show();
+		
+	}
+
+	public static void main(String[] args) {
+		Application.launch(args); //launches application
+	}
+
+}
